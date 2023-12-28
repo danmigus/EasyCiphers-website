@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="images/eye.ico" type="image/x-icon">
+        <link rel="stylesheet" href="style.css">
+        <title>Caesar's Cipher</title>
+
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <h1 class="header">
+            <p>
+                <a href="main-page.html">
+                    <img src="images/logo.png" class="logo"> 
+                </a>
+            </p>
+        </h1>
+        <br>
+
+        <ul>
+            <li>
+                <a href="#"><b>Cipher List ▼</a>
+                <ul class="dropdown">
+                    <li><a href="caesar.html">Caesar</a></li>
+                </ul>
+            </li>
+
+            <li>            
+                <a href="#"><b>Codes ▼</a>
+                <ul class="dropdown">
+                    <li><a href="crc.html">CRC</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <hr class="header-line">
+
+        <div class="about-block">
+            <h1>Caesar's Cipher</h1>
+
+            <p>
+                A simple shift cipher with each alphabet character assigned to a number starting from zero (a = 0, b = 1, c = 2..., z = 25).<br><br>
+                Leading and trailing whitespace will be taken care of (e.g. space or new-line).<br><br>
+                Characters other than alphabetic will not be encrypted (e.g. !, #, 4).<br>
+            </p>
+        </div>
+
+        <div class="cipher-boxes">
+            <p>Shift Amount</p>
+            <input autocomplete="off" style="font-size: 20px"id="js-shift-box" placeholder="Enter here." type="number" oninput="
+                shiftAmt = Number(restrictToTwoDigitNum());
+            ">
+        </div>
+        
+        <div style="margin: auto">
+            <div class="cipher-boxes" style="float: left;">
+                <p style="color: rgb(148, 29, 29); margin-bottom: 10px;">
+                    Plaintext
+                    <button class="generic-button" style="margin-left: 200px;" onclick="
+                        encryptPlaintextWrap(event);
+                    ">Encrypt / Decrypt</button>
+                </p>
+
+                <label>
+                    <textarea autocomplete="off" id="js-caesar-pt" cols="60" rows="20" name="content" placeholder="Enter Here." onkeydown="
+                        encryptPlaintextWrap(event);
+                    "></textarea>
+                </label>
+            </div>
+
+            <div class="cipher-boxes" style="float: left;">
+                <p style="color: rgb(29, 148, 45); margin-top: 30px;">Encrypted Text</p>
+
+                <label>
+                    <textarea id="js-caesar-et" cols="60" rows="20" name="content" placeholder="No need to enter anything here."></textarea>
+                </label>
+            </div>
+
+            <div id="clear" style="clear: both"></div>
+        </div>
+
+        <script src="caesar.js">
+
+        </script>
+    </body>
+</html>

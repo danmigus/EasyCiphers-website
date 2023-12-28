@@ -1,0 +1,85 @@
+body{
+    background-color: rgb(255, 253, 251);
+    font-family: monospace;
+}
+
+ul{
+    list-style: none;
+    background: rgb(233, 229, 226);
+}
+
+ul li{
+    display: inline-block;
+    position: relative;
+}
+
+ul li a{
+    display: block;
+    padding: 20px 25px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+}
+
+ul li ul.dropdown li{
+    display: block;
+}
+
+ul li ul.dropdown{
+    width: 100%;
+    background: rgb(233, 229, 226);
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+ul li a:hover{
+    background: rgb(184, 184, 184);
+}
+
+ul li:hover ul.dropdown{
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.logo{
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 500px;
+}
+
+.header-line{
+    color: gray;
+}
+
+.cipher-list{
+    padding-left: 10px;
+}
+
+.about-block{
+    padding-left: 20px;
+}
+
+.cipher-boxes{
+    padding: 20px;
+    font-size: 15px;
+}
+
+.generic-button
+{
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: none;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+

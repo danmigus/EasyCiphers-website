@@ -27,6 +27,7 @@ function encryptPlaintextWrap(event)
 function encryptPlaintext(pT, shiftAmt)
 {
     let eT = "";
+    let letter = "";
     pT = pT.trim();
 
     console.log(`Shift amount is ${shiftAmt}`);
@@ -34,18 +35,20 @@ function encryptPlaintext(pT, shiftAmt)
     // Loop through input plaintext and only encrypt ascii range of normal alphabetic letters.
     for (var i = 0; i < pT.length; i++)
     {
-        // If (anything other than alphabetic)
-        if ((!(pT.charCodeAt(i) >= 65) && !(pT.charCodeAt(i)) <= 90) || (!(pT.charCodeAt(i) >= 97) && !(pT.charCodeAt(i)) <= 122))
-            eT += pT[i];
-
-        // else (alphabetic)
-        else 
+        // If alpabetic
+        if (((pT.charCodeAt(i) >= 65) && (pT.charCodeAt(i)) <= 90) || ((pT.charCodeAt(i) >= 97) && (pT.charCodeAt(i)) <= 122))
         {
-            x = (pT.charCodeAt(i) - 97 + shiftAmt);
+            letter = (pT[i]).toLowerCase();
+            x = (letter.charCodeAt(0) - 97 + shiftAmt);
             y = 26;
 
             // Needs to be done like this because Java/JavaScript handles modulos weird.
             eT += String.fromCharCode((((x % y) + y) % y) + 97);
+        }
+
+        else 
+        {
+            eT += pT[i];
         }
     }
 
